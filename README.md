@@ -49,7 +49,7 @@ Container Applicaion: ```http://localhost:8080```
 
 Inventory Application: ```http://localhost:8081```
 
-___ You can run the Invetory application in isolation and skip steps 4 and 5 ___
+__You can run the Invetory application in isolation and skip steps 4 and 5__
 
 
 ### Additional Information

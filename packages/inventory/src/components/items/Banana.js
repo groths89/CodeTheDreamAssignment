@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import banana from '../../../public/assets/items/bananas.png';
+import banana from '../../../public/assets/items/bananas.png';;
 
 const Image = styled.img`
 
@@ -73,11 +73,14 @@ const InStock = styled.input`
 export default () => {
     const [count, setCount] = useState(0);
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+    useEffect(() => {
+        setCount(count)
+    }, [])
+
+    const sendEmail = () => {
         let params = {
             to_name: 'Gregory',
-            from_name: 'Gregory',
+            from_name: 'Inventory System',
             message: 'Sorry, the inventory for bananas is at 0'
         }
 
@@ -85,31 +88,28 @@ export default () => {
         .then(function(response) {
             console.log('Success', response.status);
         }, function(error) {
-            console.log('Failed', error);
+            console.log('Failed', error);            
         })
     }
 
-    const decrease = () => {
-        let minusBtn = document.getElementById('minus-btn');
-        let plusBtn = document.getElementById('plus-btn');
+    let decrease = () => {
         if(count <= 0) {
-            sendEmail();
             return;
-        } else{
+        } else {
             setCount(count - 1);
+            if (count === 0) {
+                sendEmail();
+            }
         }
     }
 
-    const increase = () => { 
-        let minusBtn = document.getElementById('minus-btn');
-        let plusBtn = document.getElementById('plus-btn');
+    let increase = () => { 
         if(count >= 100) {
             return;
-        } else{
+        } else {
             setCount(count + 1);
         }
     }
-
 
     return (
         <Card sx={{  minWidth: 275 }}>

@@ -15,7 +15,7 @@ const prodConfig = {
         new ModuleFederationPlugin({
             name: 'container',
             remotes: {
-                inventory: `inventory@${domain}/inventory/remoteEntry.js`
+                inventory: `inventory@${domain}/inventory/latest/remoteEntry.js`
             }
         })
     ]

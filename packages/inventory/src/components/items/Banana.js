@@ -70,22 +70,26 @@ const InStock = styled.input`
     border-radius: 0;
 `;
 
-export default (props) => {
+export default () => {
     const [count, setCount] = useState(0);
 
-    const decrease = () => {
-        const sendEmail = () => {
-            let params = {
-                name: 'Gregory'
-            }
-
-            emailjs.send("service_jhk0vja", "bananas_inventory_at_0", params, "user_362jS6RmUwAhlFtsY4D9w")
-            .then(function(response) {
-                console.log('Success', response.status);
-            }, function(error) {
-                console.log('Failed', error);
-            })
+    const sendEmail = (e) => {
+        e.preventDefault();
+        let params = {
+            to_name: 'Gregory',
+            from_name: 'Gregory',
+            message: 'Sorry, the inventory for bananas is at 0'
         }
+
+        emailjs.send("service_jhk0vja", "bananas_inventory_at_0", params, "user_362jS6RmUwAhlFtsY4D9w")
+        .then(function(response) {
+            console.log('Success', response.status);
+        }, function(error) {
+            console.log('Failed', error);
+        })
+    }
+
+    const decrease = () => {
         let minusBtn = document.getElementById('minus-btn');
         let plusBtn = document.getElementById('plus-btn');
         if(count <= 0) {
@@ -114,7 +118,7 @@ export default (props) => {
                 <Title>Banana</Title>
                 <BtnRow id="btn-row">
                     <Btn id="btn">
-                        <Minus onClick={decrease} id="minus-btn" disabled={false}>-</Minus>
+                        <Minus onClick={decrease} id="minus-btn">-</Minus>
                         <InStock readOnly disabled value={count}></InStock>
                         <Plus onClick={increase} id="plus-btn">+</Plus>                        
                     </Btn>

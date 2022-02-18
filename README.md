@@ -1,6 +1,8 @@
 # CodeTheDream Assignment
 ## Basic App for Keeping Track of an Inventory
 
+[![deploy-container](https://github.com/groths89/CodeTheDreamAssignment/actions/workflows/container.yml/badge.svg)](https://github.com/groths89/CodeTheDreamAssignment/actions/workflows/container.yml)
+
 This app follows a microfrontend architecture. The assignment was to create an application in React and/or Ruby On Rails (ROR) that has a main function of keeping track of an item in an inventory.
 
 ### Main Required Features
@@ -53,4 +55,8 @@ Inventory Application: ```http://localhost:8081```
 
 ### Additional Information
 
+- To check that email is working when the inventory hits 0 go to:
 
+```Service Provider: Google Mail```
+```Email: code.development6556@gmail.com```
+```Password: Password6556```

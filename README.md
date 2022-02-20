@@ -3,6 +3,8 @@
 
 [![deploy-container](https://github.com/groths89/CodeTheDreamAssignment/actions/workflows/container.yml/badge.svg)](https://github.com/groths89/CodeTheDreamAssignment/actions/workflows/container.yml)
 
+[Production Build Deployed To AWS CloudFront](https://d12sb7coequl74.cloudfront.net/)
+
 This app follows a microfrontend architecture. The assignment was to create an application in React and/or Ruby On Rails (ROR) that has a main function of keeping track of an item in an inventory.
 
 ### Main Required Features
